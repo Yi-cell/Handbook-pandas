@@ -26,3 +26,5 @@ print(PD_reviews.head()) # Using head() command, which grabs the first five rows
 #To make pandas use the column for the index (instead of creating a new one from scratch), we can specify an index_col.
 PD_reviews1 = pd.read_csv('US_politicians_Twitter.csv',index_col=0)
 print(PD_reviews1.head())
+#Save the DataFrame to disk as a csv file.
+# PD_reviews1.to_csv('xxx.csv')
