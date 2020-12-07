@@ -15,5 +15,5 @@ PD_reviews.rename_axis('attributes',axis = 'columns').rename_axis('Entries',axis
 # This is useful when we have data in different DataFrame or Series objects but having the same fields.
 ''' pd.concat([a,b])'''
 # The middlemost combiner in terms of complexity is join(). join() lets you combine different DataFrame objects which have an index in common. 
-'''left.join(right,lsuffi='',rsuffix='')'''
+'''left.join(right,lsuffix='',rsuffix='')'''
 # The lsuffix and rsuffix parameters are necessary here because the data has the same column names in both datasets. If this wasn't true.
