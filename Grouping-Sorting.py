@@ -16,3 +16,15 @@ print(PD_reviews.groupby('Age').Age.count())
 #We can use any of the summary functions we've used before with this data. For example, to get the cheapest wine in each point value category, we can do the following:
 
 print(PD_reviews.groupby('Political_party').Age.min())
+
+#Using lambda and groupby
+
+print(PD_reviews.groupby('Political_party').apply(lambda df: df.Age.iloc[0]))
+
+#For even more fine-grained control, you can also group by more than one column. For an example, here's how we would pick out the oldest politicians by party and gender.
+
+print(PD_reviews.groupby(['Political_party','Sex']).apply(lambda df: df.Age.iloc[0]))
+
+#Another groupby() method worth mentioning is agg(), which lets you run a bunch of different functions on your DataFrame simultaneously. For example, we can generate a simple statistical summary of the dataset as follows:
+
+print(PD_reviews.groupby(['Political_party']).Age.agg([len,min,max]))
